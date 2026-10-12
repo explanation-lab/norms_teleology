@@ -1,40 +1,38 @@
-# Research project title
+# norms_teleology
 
-Replace this title and describe the research question, motivation and scientific contribution. This is a flexible starting point for new Explanation Lab projects; change the structure when the science requires it. Existing projects do not need to adopt these folder names.
+How do beliefs about the purposes of nonhuman animals shape judgments of goodness, value, and importance?
 
-## Studies and experiments
+The project develops the normativity strand of the teleology work discussed by David Rose and Shaun Nichols in the October 9–12, 2026 “Projects for students” email thread. It builds on the lab’s ecological-purpose and animal-goodness work and on literature concerning teleological explanation, biological functions, and normative judgments.
 
-No experiments, data or results are supplied by this template. Describe each actual study, its design and the corresponding source/materials once they exist. Separate current studies from planned work and older versions. Use experiment-by-experiment subdirectories where useful.
+## Starting questions
+
+- **Individuals / good purposes:** Compare animals failing to fulfill an ecological purpose (e.g., bumblebees that never pollinate) with closely matched nonfunctional differences. Explore judgments of badness, value, and importance, including measures that do not rely exclusively on strong moral language.
+- **Species / obsolescence:** Does a species seem less valuable or important when the ecological function it serves becomes obsolete?
+- **Species / loss of uniqueness:** Does a species seem less valuable or important when other species now serve the same ecological function?
+
+These are directions for developing candidate cases, not finalized experiments or established findings. Dhruv should review the background, propose study ideas, and develop closely matched controls before a design is chosen with David and Shaun.
+
+## Team and current stage
+
+Dhruv Sahu is the sole project member and Project Lead for now. David Rose and Shaun Nichols provide scientific guidance. Current stage: literature review and study-material development. No backup has been assigned, and no study has been launched in this workspace.
+
+## Slides and readings
+
+- [Preparation slides — Prepmaterial.pptx](https://docs.google.com/presentation/d/1hAYuEmqD8ggW-ICuPhchTQl99BpP1bOj/edit?usp=drivesdk&ouid=101954754178837148122&rtpof=true&sd=true): Shaun’s latest attachment, October 12, 2026 at 4:57 PM Eastern. Slide 2 is visible; original speaker notes are preserved.
+- [Readings document — papers_for_dhruv.docx](https://docs.google.com/document/d/1VqyLMDCL6lG5STdk6gRiyZ3jVK6R5PG2/edit?usp=drivesdk&ouid=101954754178837148122&rtpof=true&sd=true): David’s October 12, 2026 reading list, approved by Shaun. Includes slide references and eight full-text links.
+- [Shared project folder](https://drive.google.com/drive/folders/1vCPlkpd5BauYUIpJx2RwQ2ynN5ns8ffs)
+
+The reading list covers Kelemen (1999), Schachner et al. (2017), Kelemen & Rosset (2009), Kelemen et al. (2013), Lewry et al. (2023), Foster-Hanson & Lombrozo (2022), and Lombrozo & Rehder (2012). Consult the document for exact titles and PDF/source links.
+
+## Project workspaces
+
+- [Lab Dashboard](https://explanation-lab-dashboard.web.app/#project/NORMS-TELEOLOGY-S6P2/overview)
+- [Study Console](https://explanation-lab-studies.web.app/?view=projects&project=NORMS-TELEOLOGY-S6P2)
+- [Slack — #proj-norms-teleology](https://explanationlab.slack.com/archives/C0C8MLADFM4)
+- [Google Drive](https://drive.google.com/drive/folders/1vCPlkpd5BauYUIpJx2RwQ2ynN5ns8ffs)
 
 ## Repository structure
 
-```text
-README.md              Durable scientific description and reproducibility entry points
-PROJECT_STATUS.md      Current operational state and continuity
-code/
-  R/                   R analysis and figure generation
-  experiments/         Experiment implementations and materials
-data/                 De-identified analysis data
-docs/                 Browser-renderable experiments or generated web output
-figures/              Plots, diagrams, experimental screenshots and paper figures
-```
+`code/R/` is available for analyses and figures; `code/experiments/` for study implementations and materials; `data/` for appropriately de-identified analysis data; `docs/` for browser-renderable experiments or generated output; and `figures/` for research figures. The template supplies structure only. No experiment code, data, analyses, or preregistration exist yet.
 
-`data/`, `docs/` and `figures/` are repository-root folders. Add Python or manuscript folders only when the project actually uses them. Keep `docs/` for browser-renderable output, not general notes. Explain any project-specific organization here.
-
-## Running experiments and reproducing analyses
-
-Add commands, software/package versions, inputs and expected outputs for the implementations that actually exist. Distinguish processing raw data from reproducing analyses on an already processed dataset. Record known reproduction limits rather than inventing missing steps.
-
-## Scientific resources
-
-Add verified preregistration, OSF, rendered experiment and rendered R-analysis links when available. There are no configured scientific resources in this template. A draft is not a preregistration; planned work is not a completed result.
-
-## Contributors
-
-Record confirmed contributions and authorship as appropriate. Add a CRediT statement when useful for a mature or publication repository; no roles or authorship are assigned by this template.
-
-## Data and access
-
-Commit only appropriately de-identified analysis data. Never commit participant-identifiable data, identifiable raw CHS exports, login/session information, payment or gift-card codes, credentials, tokens or private keys. Keep approved restricted source data outside GitHub. Review files and history before copying a repository or making it public.
-
-Use [PROJECT_STATUS.md](PROJECT_STATUS.md) for active tasks, ownership, blockers and handoffs. Keep this README focused on durable scientific documentation.
+Keep participant-identifiable data and credentials outside this repository. Record active work, ownership, and open decisions in [PROJECT_STATUS.md](PROJECT_STATUS.md).
