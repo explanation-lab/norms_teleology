@@ -27,4 +27,9 @@ service-account*.json
 /data/private/
 /data/identifiable/
 
+# Local staging and extracted review copies; frozen release ZIPs remain tracked.
+/deployment/
+/dist/norms-teleology-study1-review/
+/dist/norms-teleology-study1-review 2/
+
 # These patterns are a convenience, not a privacy audit. Review every commit.

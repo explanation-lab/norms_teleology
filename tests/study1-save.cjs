@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const { webcrypto } = require('node:crypto');
 const source = path.join(__dirname, '../code/experiments/study1/js');
-const version = 'norms-teleology-study1-1.1.0';
+const version = 'norms-teleology-study1-1.1.1';
 
 function launch({ condition = 'ecology', complete = false, fail = false, omitQuestion = false, omitDemographics = false } = {}) {
   const elements = new Map();
@@ -31,7 +31,7 @@ function launch({ condition = 'ecology', complete = false, fail = false, omitQue
     { stage: 'instructions', screen_index: 1, condition },
     { stage: 'story', screen_index: 2, condition },
     ...m.questions.map((q, i) => ({ stage: 'rating', screen_index: i + 3, trial_role: 'response', question_id: q.id, rating: 4, explanation: 'Synthetic explanation.', condition })),
-    { stage: 'demographics', screen_index: 7, screen_id: 'demographics', trial_role: 'demographics', age: '29', gender: 'Non-binary', other_gender: null, race: 'Multiracial', other_race: null, ethnicity: 'Non-Hispanic', condition }
+    { stage: 'demographics', screen_index: 7, screen_id: 'demographics', trial_role: 'demographic', age: '29', gender: 'Non-binary', other_gender: null, race: 'Multiracial', other_race: null, ethnicity: 'Non-Hispanic', condition }
   ];
   if (omitQuestion) records.splice(3, 1);
   if (omitDemographics) records.splice(records.findIndex(r => r.stage === 'demographics'), 1);
@@ -70,7 +70,7 @@ function launch({ condition = 'ecology', complete = false, fail = false, omitQue
   assert.equal(missingDemo.calls.length, 0, 'Demographics screen must be visited, even though each answer is optional');
   const formRun = launch();
   const demoTrial = formRun.timeline[7];
-  assert.equal(demoTrial.data.trial_role, 'demographics');
+  assert.equal(demoTrial.data.trial_role, 'demographic');
   assert(demoTrial.stimulus().includes('These questions are optional. You may leave any item blank.'));
   assert(!demoTrial.stimulus().includes('required'));
   demoTrial.on_start(); demoTrial.on_load();

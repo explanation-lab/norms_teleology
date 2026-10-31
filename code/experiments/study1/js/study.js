@@ -152,7 +152,7 @@ const AVAILABLE_CONDITIONS = ['control', 'survival', 'ecology'];
     return { type: jsPsychHtmlButtonResponse, choices: [], stimulus: () => html(screen), data: {
       study_version: m.version, session_id: state.session_id, condition, review_mode: review,
       valid_participant_data: collection, collection_mode: collection ? explanationLab.launch.mode : review ? 'review' : 'local_preview',
-      screen_index: index, stage: screen.stage, trial_role: q ? 'response' : screen.stage === 'demographics' ? 'demographics' : 'screen',
+      screen_index: index, stage: screen.stage, trial_role: q ? 'response' : screen.stage === 'demographics' ? 'demographic' : 'screen',
       ...(q ? { question_id: q.id, item_id: q.id, measure: q.id, question_position: screen.question + 1, statement: q.text, probe: m.probe, scale_min: 1, scale_max: 7, scale_labels: m.scale, story_setup: m.setup, story_condition: m.conditions[condition].text, image_spotted: m.images[0].src, image_unspotted: m.images[1].src } : {})
     }, on_start: () => { current = index; }, on_load: () => bind(screen), on_finish: data => {
       delete data.stimulus;

@@ -1,6 +1,6 @@
 /* Study 1.docx, revised by David Rose's approved instructions, 2026-10-31. */
 globalThis.NormsMaterials = Object.freeze({
-  version: 'norms-teleology-study1-1.1.0',
+  version: 'norms-teleology-study1-1.1.1',
   demographicFields: ["age", "gender", "other_gender", "race", "other_race", "ethnicity"],
   demographics: {
     age: { min: 18, max: 100 },

@@ -1,6 +1,6 @@
 # norms_teleology
 
-## Study 1 review build
+## Study 1
 
 Study 1 implements David's October 31, 2026 approved revision of `Study 1.docx`:
 one fictional species, three between-participant conditions (control, survival
@@ -14,7 +14,11 @@ race and ethnicity), with all items optional, in place of the feedback form.
   `index.html`; conditions and screens can be selected directly in the panel.
   All assets and jsPsych are bundled. No server or internet is required.
 - [Console upload ZIP](dist/norms-teleology-study1-upload.zip): the separate
-  collection entry, official client and configuration for hosting/registration.
+  collection source package.
+- [Frozen Console release](dist/norms-teleology-study1-console-1.1.1.zip): the native
+  converted package actually deployed on GitHub Pages.
+- [Study Console setup](https://explanation-lab-studies.web.app/?view=projects&project=NORMS-TELEOLOGY-S6P2&study=NORMS-TELEOLOGY-STUDY-1-SYGT&data=sandbox&section=setup):
+  **25 per condition / 75 total**. All three hosted Sandbox groups passed.
 - [Design and wording](code/experiments/study1/STUDY_DESIGN.md) and
   [image provenance and prompts](code/experiments/study1/assets/IMAGE_PROVENANCE.md).
 - [Console setup status](docs/STUDY1_CONSOLE.md).
@@ -24,9 +28,11 @@ Rebuild packages with `python3 tools/package_study.py`. Run checks with
 `python3 tests/check_packages.py`. For localhost preview, run
 `python3 tools/serve.py --port 8776` and open `http://127.0.0.1:8776/`.
 
-The repository remains private. No recruitment is launched. The existing
-Dashboard resource links this repository to Dhruv's canonical project; the new
-study awaits hosting and Console registration. Review data are never submitted.
+The repository is public with David's explicit approval. Study 1 is hosted and
+registered under Dhruv's existing project. Sandbox data and export checks passed;
+only the actual Prolific completion URL and configuration confirmation remain.
+No recruitment is launched and there are zero production submissions. Review
+data are never submitted. See the setup record before changing the frozen release.
 
 How do beliefs about the purposes of nonhuman animals shape judgments of goodness, value, and importance?
 

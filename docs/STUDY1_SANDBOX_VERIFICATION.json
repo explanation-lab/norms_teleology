@@ -1,0 +1,50 @@
+{
+  "result": "passed",
+  "study_id": "NORMS-TELEOLOGY-STUDY-1-SYGT",
+  "experiment_version": "norms-teleology-study1-1.1.1",
+  "conditions": {
+    "control": [
+      4,
+      2,
+      3,
+      1
+    ],
+    "survival": [
+      7,
+      6,
+      5,
+      1
+    ],
+    "ecology": [
+      6,
+      5,
+      7,
+      2
+    ]
+  },
+  "targets": {
+    "control": 25,
+    "survival": 25,
+    "ecology": 25
+  },
+  "submissions": 3,
+  "raw_trials": 24,
+  "rating_rows": 12,
+  "response_csv_rows": 21,
+  "demographic_rows": 3,
+  "condition_checks": "all matched",
+  "control_reload": "all eight screens preserved exactly once",
+  "optional_demographics": "all blank ecology session saved successfully",
+  "other_demographics": "both survival Other entries preserved",
+  "bundle_sha256": "671544616cfbad500a304ace8c29146008e2e789c98af8ac7d356895595649b7",
+  "console_stage": "sandbox",
+  "production_submissions": 0,
+  "data_format_confirmed": true,
+  "remaining_actions": [
+    "Actual Prolific completion URL",
+    "Confirm Prolific study link, 75 places, and completion code"
+  ],
+  "page_url": "https://explanation-lab.github.io/norms_teleology/",
+  "deployment_commit": "72937ae44eb669d06fd1c9ddadc7c67e0f28edbc",
+  "package_fingerprint": "51feccb88a5f2b1f2a7949fd838db07928fab69e31590674e87810c7f3b5226b"
+}

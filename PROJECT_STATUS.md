@@ -1,7 +1,7 @@
 # Project status
 
 - Last updated: October 31, 2026.
-- Current stage: Study 1 implemented for researcher review; hosting and collection setup pending.
+- Current stage: Study 1 hosted and Sandbox verified; awaiting David's final Prolific setup.
 - Project Lead and sole project member: Dhruv Sahu (ds2534@cornell.edu; GitHub ds2534).
 - Project Backup: none assigned; sole-member project for now.
 - Scientific guidance: David Rose and Shaun Nichols.
@@ -18,36 +18,36 @@ Version 1.1.0 replaces the standalone feedback screen with the optional Purpose
 Norms demographic form and includes the demographic fields in local and Console
 exports. The concise instructions requested by David are retained.
 
-The existing project-to-repository association is verified. The Console converter
-accepted the three-condition integration. The study is not registered because
-registration requires a public hosted URL. No repository visibility change,
-recruitment launch or production data collection was performed. See
-[setup and verification](docs/STUDY1_CONSOLE.md). The next action is researcher
-review, followed by hosting, registration, sample-size/terms confirmation and
-actual Sandbox verification before launch.
+Shaun approved the study for Console setup. David requested 25 participants per
+condition (75 total) and explicitly approved making the repository public for
+GitHub Pages. Study `NORMS-TELEOLOGY-STUDY-1-SYGT` is registered under the existing
+project. All three hosted Sandbox conditions and the exported ratings and
+demographics passed. Current frozen release is `norms-teleology-study1-1.1.1`.
+See [setup and verification](docs/STUDY1_CONSOLE.md). No recruitment is launched.
 
 ## Current work and next actions
 
-1. Review Study 1 with David and Shaun using the offline reviewer ZIP.
-2. Resolve any revisions, then choose sample size, recruitment terms and hosting.
-3. Register the hosted collection package under the existing Console project and verify all three Sandbox groups and exports.
+1. David adds the actual Prolific completion URL in Setup & launch.
+2. David configures the production study link, 75 places and matching completion code in Prolific, then confirms those settings in the Console.
+3. Recheck the real completion redirect and final preflight before Ready/Live and collection.
 4. Continue the literature review and other project strands using the preparation slides and readings in [Google Drive](https://drive.google.com/drive/folders/1vCPlkpd5BauYUIpJx2RwQ2ynN5ns8ffs).
 
-Study 1's design is approved for implementation and researcher review. No research deadline or collection launch is agreed.
+Study 1 is technically verified. Prolific setup and launch remain with David.
 
 ## Access and working locations
 
 - [Lab Dashboard](https://explanation-lab-dashboard.web.app/#project/NORMS-TELEOLOGY-S6P2/overview) — Dhruv is the sole member and Project Lead.
-- [Study Console](https://explanation-lab-studies.web.app/?view=projects&project=NORMS-TELEOLOGY-S6P2) — existing linked project; new Study 1 awaits hosting and registration.
+- [Study Console](https://explanation-lab-studies.web.app/?view=projects&project=NORMS-TELEOLOGY-S6P2&study=NORMS-TELEOLOGY-STUDY-1-SYGT&data=sandbox&section=setup) — three groups passed; final Prolific setup pending.
 - [Slack channel](https://explanationlab.slack.com/archives/C0C8MLADFM4) — private #proj-norms-teleology with Dhruv.
-- GitHub — Dhruv has write access; the repository is private, with the organization’s existing base read access.
+- GitHub — public with David's explicit approval; Dhruv retains write access. GitHub Pages publishes the frozen collection branch.
 - [Drive folder](https://drive.google.com/drive/folders/1vCPlkpd5BauYUIpJx2RwQ2ynN5ns8ffs) — owned by Cornell Explanation Lab; original slides and reading document.
 
 ## Open decisions
 
 Study 1's creature, manipulations, measures and adult target audience are approved.
-Total sample size, recruitment terms, hosting, deadline and future backup
-assignment remain open. The five-minute duration is a pilot estimate.
+Total sample size is 75, with 25 per condition. Hosting and Sandbox checks are
+complete. Recruitment terms, deadline and future backup assignment remain open.
+The five-minute duration is a pilot estimate to match the recruitment listing.
 
 ## Resume / handoff
 
