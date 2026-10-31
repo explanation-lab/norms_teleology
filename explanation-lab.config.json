@@ -1,0 +1,36 @@
+{
+  "format": "explanation-lab-study-config",
+  "manifestVersion": "1.2.0",
+  "schemaVersion": "2.0.0",
+  "convertedAt": "2026-10-31T16:03:07.296Z",
+  "sourceZip": "norms-teleology-study1-upload.zip",
+  "jsPsychVersion": "7.3.4",
+  "experimentVersion": "norms-teleology-study1-1.1.1",
+  "clientVersion": "1.5.1",
+  "assignmentType": "between_participant",
+  "launchAssignmentParameter": "condition",
+  "launchConditions": [
+    "control",
+    "survival",
+    "ecology"
+  ],
+  "conditions": [
+    "control",
+    "survival",
+    "ecology"
+  ],
+  "internalFactors": [],
+  "internalConditionCells": [],
+  "demographicsConfirmed": true,
+  "demographicFields": [
+    "age",
+    "gender",
+    "other_gender",
+    "race",
+    "other_race",
+    "ethnicity"
+  ],
+  "conversionOutcome": "ready",
+  "packageFingerprint": "51feccb88a5f2b1f2a7949fd838db07928fab69e31590674e87810c7f3b5226b",
+  "originalBackupPaths": []
+}
