@@ -1,5 +1,31 @@
 # norms_teleology
 
+## Study 1 review build
+
+Study 1 implements David's October 31, 2026 approved revision of `Study 1.docx`:
+one fictional species, three between-participant conditions (control, survival
+benefit, ecological benefit), and four agreement ratings with explanations.
+
+- [Open the reviewer entry](code/experiments/study1/index.html). For a browser
+  preview, use the ZIP or local HTML file rather than GitHub's source-code view.
+- [Review ZIP](dist/norms-teleology-study1-review.zip): extract and double-click
+  `index.html`; conditions and screens can be selected directly in the panel.
+  All assets and jsPsych are bundled. No server or internet is required.
+- [Console upload ZIP](dist/norms-teleology-study1-upload.zip): the separate
+  collection entry, official client and configuration for hosting/registration.
+- [Design and wording](code/experiments/study1/STUDY_DESIGN.md) and
+  [image provenance and prompts](code/experiments/study1/assets/IMAGE_PROVENANCE.md).
+- [Console setup status](docs/STUDY1_CONSOLE.md).
+
+Rebuild packages with `python3 tools/package_study.py`. Run checks with
+`node tests/study1.cjs`, `node tests/study1-save.cjs`, and
+`python3 tests/check_packages.py`. For localhost preview, run
+`python3 tools/serve.py --port 8776` and open `http://127.0.0.1:8776/`.
+
+The repository remains private. No recruitment is launched. The existing
+Dashboard resource links this repository to Dhruv's canonical project; the new
+study awaits hosting and Console registration. Review data are never submitted.
+
 How do beliefs about the purposes of nonhuman animals shape judgments of goodness, value, and importance?
 
 The project develops the normativity strand of the teleology work discussed by David Rose and Shaun Nichols in the October 9–12, 2026 “Projects for students” email thread. It builds on the lab’s ecological-purpose and animal-goodness work and on literature concerning teleological explanation, biological functions, and normative judgments.
@@ -33,6 +59,6 @@ The reading list covers Kelemen (1999), Schachner et al. (2017), Kelemen & Rosse
 
 ## Repository structure
 
-`code/R/` is available for analyses and figures; `code/experiments/` for study implementations and materials; `data/` for appropriately de-identified analysis data; `docs/` for browser-renderable experiments or generated output; and `figures/` for research figures. The template supplies structure only. No experiment code, data, analyses, or preregistration exist yet.
+`code/R/` is available for analyses and figures; `code/experiments/` for study implementations and materials; `data/` for appropriately de-identified analysis data; `docs/` for browser-renderable experiments or generated output; and `figures/` for research figures. Study 1 now lives in `code/experiments/study1/`; its downloadable packages are in `dist/`. No participant data, analyses, or preregistration have been created.
 
 Keep participant-identifiable data and credentials outside this repository. Record active work, ownership, and open decisions in [PROJECT_STATUS.md](PROJECT_STATUS.md).
