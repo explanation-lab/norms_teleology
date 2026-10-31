@@ -31,6 +31,7 @@ for kind in ('review', 'upload'):
             assert b'NORMS_REVIEW = true' in z.read('review.html')
             config = json.loads(z.read('explanation-lab.config.json'))
             assert config['conditions'] == ['control', 'survival', 'ecology']
-            assert config['demographicFields'] == []
+            assert config['demographicFields'] == ['age', 'gender', 'other_gender', 'race', 'other_race', 'ethnicity']
+            assert config['experimentVersion'] == manifest['version'] == 'norms-teleology-study1-1.1.0'
             assert len(config['packageFingerprint']) == 64
         print(f'{kind}: {len(names)} files, ZIP CRCs, SHA-256 manifest, entry point, and asset paths passed')

@@ -3,10 +3,14 @@ from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 import hashlib
 import json
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'code/experiments/study1'
 OUT = ROOT / 'dist'
+MATERIALS = (SOURCE / 'js/materials.js').read_text()
+VERSION = re.search(r"version: '([^']+)'", MATERIALS).group(1)
+DEMOGRAPHIC_FIELDS = json.loads(re.search(r'demographicFields: (\[[^\]]*\])', MATERIALS).group(1))
 
 
 def build(kind):
@@ -15,9 +19,9 @@ def build(kind):
     if kind == 'upload':
         files['review.html'] = files['index.html']
         files['index.html'] = files.pop('collection.html')
-        options = {'experimentVersion': 'norms-teleology-study1-1.0.0',
+        options = {'experimentVersion': VERSION,
                    'conditionCodes': ['control', 'survival', 'ecology'],
-                   'demographicFields': [], 'noDemographics': True,
+                   'demographicFields': DEMOGRAPHIC_FIELDS, 'noDemographics': False,
                    'assignmentType': 'between_participant'}
         digest = hashlib.sha256()
         for name, content in sorted(files.items()):
@@ -33,15 +37,16 @@ def build(kind):
             'assignmentType': 'between_participant', 'launchAssignmentParameter': 'condition',
             'launchConditions': options['conditionCodes'], 'conditions': options['conditionCodes'],
             'internalFactors': [], 'internalConditionCells': [], 'demographicsConfirmed': True,
-            'demographicFields': [], 'conversionOutcome': 'ready',
+            'demographicFields': DEMOGRAPHIC_FIELDS, 'conversionOutcome': 'ready',
             'packageFingerprint': fingerprint, 'originalBackupPaths': []
         }
         files['explanation-lab.config.json'] = (json.dumps(config, indent=2) + '\n').encode()
         files['CONSOLE_SETUP.txt'] = (
             'Console-connected upload package. The official Console converter verified\n'
-            'the integration structure, assignment wiring, three conditions and absence\n'
-            'of demographic questions on October 31, 2026. The final source includes\n'
-            'a subsequent completed-session reload fix, covered by runtime tests.\n'
+            'the initial integration structure, assignment wiring and three conditions\n'
+            'on October 31, 2026. Version 1.1.0 replaces the standalone feedback screen\n'
+            'with optional age, gender, race and ethnicity fields from Purpose Norms.\n'
+            'Final source and collection mappings are covered by runtime tests.\n'
             'This manifest and fingerprint are reproducibly generated from final source\n'
             'by tools/package_study.py, rather than reusing the earlier conversion hash.\n'
             '\nPublish the entire folder. Register its public study URL in project\n'
@@ -54,7 +59,7 @@ def build(kind):
         for name in ('collection.html', 'js/collection.js', 'explanation-lab-client.js'):
             files.pop(name, None)
     manifest = {name: hashlib.sha256(content).hexdigest() for name, content in files.items()}
-    files['PACKAGE_MANIFEST.json'] = (json.dumps({'package': kind, 'version': 'norms-teleology-study1-1.0.0', 'sha256': manifest}, indent=2) + '\n').encode()
+    files['PACKAGE_MANIFEST.json'] = (json.dumps({'package': kind, 'version': VERSION, 'sha256': manifest}, indent=2) + '\n').encode()
     path = OUT / f'norms-teleology-study1-{kind}.zip'
     with ZipFile(path, 'w', compression=ZIP_DEFLATED, compresslevel=9) as archive:
         for name, content in sorted(files.items()):

@@ -1,6 +1,21 @@
 /* Study 1.docx, revised by David Rose's approved instructions, 2026-10-31. */
 globalThis.NormsMaterials = Object.freeze({
-  version: 'norms-teleology-study1-1.0.0',
+  version: 'norms-teleology-study1-1.1.0',
+  demographicFields: ["age", "gender", "other_gender", "race", "other_race", "ethnicity"],
+  demographics: {
+    age: { min: 18, max: 100 },
+    gender: [
+      { value: 'Female', label: 'Female' }, { value: 'Male', label: 'Male' },
+      { value: 'Non-binary', label: 'Non-binary' }, { value: 'other_gender', label: 'Other', textField: 'other_gender' }
+    ],
+    race: [
+      { value: 'White', label: 'White' }, { value: 'Black/African American', label: 'Black/African American' },
+      { value: 'American Indian/Alaska Native', label: 'American Indian/Alaska Native' },
+      { value: 'Asian', label: 'Asian' }, { value: 'Native Hawaiian/Pacific Islander', label: 'Native Hawaiian/Pacific Islander' },
+      { value: 'Multiracial', label: 'Multiracial/Mixed' }, { value: 'other_race', label: 'Other', textField: 'other_race' }
+    ],
+    ethnicity: [{ value: 'Hispanic', label: 'Hispanic' }, { value: 'Non-Hispanic', label: 'Non-Hispanic' }]
+  },
   setup: 'Virdexes are swamp dwelling creatures. Most virdexes have numerous spots on skin. The spots are scent-producing skin patches.',
   conditions: {
     control: { label: 'Control', text: 'As virdexes move through the swamp, the spots on their backs release a scent. The scent is mild and doesn’t have any significant effects on the virdexes or the other animals in the area.' },

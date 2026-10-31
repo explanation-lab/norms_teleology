@@ -14,6 +14,9 @@ panel and ZIP. Source is in `code/experiments/study1/`; review and collection-up
 packages are in `dist/`. The matched creature images, four consistent agreement
 ratings and subsequent explanations, consent and instructions are implemented.
 The reviewer can switch conditions and jump to every screen without answering.
+Version 1.1.0 replaces the standalone feedback screen with the optional Purpose
+Norms demographic form and includes the demographic fields in local and Console
+exports. The concise instructions requested by David are retained.
 
 The existing project-to-repository association is verified. The Console converter
 accepted the three-condition integration. The study is not registered because

@@ -5,6 +5,8 @@
 Study 1 implements David's October 31, 2026 approved revision of `Study 1.docx`:
 one fictional species, three between-participant conditions (control, survival
 benefit, ecological benefit), and four agreement ratings with explanations.
+The final screen now uses the usual Purpose Norms demographics (age, gender,
+race and ethnicity), with all items optional, in place of the feedback form.
 
 - [Open the reviewer entry](code/experiments/study1/index.html). For a browser
   preview, use the ZIP or local HTML file rather than GitHub's source-code view.

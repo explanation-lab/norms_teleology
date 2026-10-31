@@ -6,7 +6,7 @@
     { stage: 'instructions', label: 'Instructions' },
     { stage: 'story', label: 'Story and animals' },
     ...['Importance', 'Survival importance', 'Value', 'Something wrong'].map((label, question) => ({ stage: 'rating', question, label: `Question ${question + 1} · ${label}` })),
-    { stage: 'feedback', label: 'Optional feedback' },
+    { stage: 'demographics', label: 'Demographics' },
     { stage: 'complete', label: 'Thank you' }
   ];
   function randomCondition() {

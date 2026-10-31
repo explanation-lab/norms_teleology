@@ -52,23 +52,35 @@ const AVAILABLE_CONDITIONS = ['control', 'survival', 'ecology'];
     if (screen.stage === 'instructions') return page(`<h1>Instructions</h1><p>You'll read about animals and see pictures of them.</p><p>Please read the information about the animals very carefully and then answer the questions that follow.</p><p>When you are ready to begin, please click Begin below.</p><button id="stage-continue">Begin</button>`, 'simple-page instructions-page');
     if (screen.stage === 'story') return page('<strong class="read-instruction" style="text-align:center">Please read the following very carefully before answering any questions.</strong>' + story() + '<div class="story-action"><button id="stage-continue">Continue</button></div>');
     if (screen.stage === 'rating') return rating(screen);
-    if (screen.stage === 'feedback') return page('<h1>Feedback</h1><form id="feedback-form" class="feedback"><label for="feedback">Do you have any feedback about any part of this study? <span class="field-note">(optional)</span></label><textarea id="feedback" name="feedback" rows="4"></textarea><button type="submit">Finish</button></form>', 'simple-page');
+    if (screen.stage === 'demographics') return demographics();
     return thankYou();
   }
+  function demographics() {
+    const prior = state.records.find(r => r.stage === 'demographics') || {};
+    const radios = (name, title) => `<fieldset><legend>${title}</legend>${m.demographics[name].map(option => `<div class="demographic-option"><label><input type="radio" name="${name}" value="${escape(option.value)}"${prior[name] === option.value ? ' checked' : ''}> ${escape(option.label)}${option.textField ? ':' : ''}</label>${option.textField ? `<input type="text" name="${option.textField}" aria-label="Other ${name}" value="${escape(prior[option.textField] || '')}">` : ''}</div>`).join('')}</fieldset>`;
+    return page(`<h1>About you</h1><p>These questions are optional. You may leave any item blank.</p><form id="demographics-form"><div class="demographic-grid"><fieldset><legend>Age</legend><input name="age" type="number" min="${m.demographics.age.min}" max="${m.demographics.age.max}" step="1" inputmode="numeric" aria-label="Age" value="${escape(prior.age || '')}"></fieldset>${radios('gender', 'Gender')}${radios('race', 'Race')}${radios('ethnicity', 'Ethnicity')}</div><div class="demographic-footer"><p class="field-note">Press Finish to complete the study.</p><button type="submit">Finish</button></div></form>`, 'simple-page');
+  }
   function thankYou() {
-    return page(`<h1>Thank you</h1><p>${review ? 'You have reached the end of the study preview.' : 'You have completed the study.'}</p>${review ? '<p>Use the reviewer panel to inspect another condition or return to any screen.</p>' : '<p class="local-note">This local study copy does not send responses to a server. You can download this session below.</p>'}<div class="export-actions"><button id="download-json">Download ${review ? 'review responses' : 'responses'} (JSON)</button><button id="download-csv">Download ratings (CSV)</button></div>`, 'simple-page thank-you');
+    return page(`<h1>Thank you</h1><p>${review ? 'You have reached the end of the study preview.' : 'You have completed the study.'}</p>${review ? '<p>Use the reviewer panel to inspect another condition or return to any screen.</p>' : '<p class="local-note">This local study copy does not send responses to a server. You can download this session below.</p>'}<div class="export-actions"><button id="download-json">Download ${review ? 'review responses' : 'responses'} (JSON)</button><button id="download-csv">Download ratings (CSV)</button><button id="download-demographics">Download demographics (CSV)</button></div>`, 'simple-page thank-you');
   }
   function download(format = 'json') {
-    const payload = { study_version: m.version, project_id: config.projectId, session_id: state.session_id, condition, review_mode: review, valid_participant_data: false, collection_mode: review ? 'review' : 'local_preview', consented: state.consented, complete: state.complete, scale_labels: m.scale, trials: state.records };
+    const demographicRow = state.records.find(r => r.stage === 'demographics');
+    const demographics = demographicRow ? Object.fromEntries(m.demographicFields.map(field => [field, demographicRow[field] ?? null])) : null;
+    const payload = { study_version: m.version, project_id: config.projectId, session_id: state.session_id, condition, review_mode: review, valid_participant_data: false, collection_mode: review ? 'review' : 'local_preview', consented: state.consented, complete: state.complete, scale_labels: m.scale, demographics, trials: state.records };
     const columns = ['session_id','condition','question_id','question_position','statement','rating','rating_label','explanation','rating_rt','rt','review_mode','valid_participant_data','study_version'];
     const quote = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
-    const data = format === 'csv' ? [columns.join(','), ...state.records.filter(r => r.trial_role === 'response').map(r => columns.map(k => quote(r[k])).join(','))].join('\r\n') : JSON.stringify(payload, null, 2);
-    const url = URL.createObjectURL(new Blob([data], { type: format === 'csv' ? 'text/csv;charset=utf-8' : 'application/json' }));
-    const link = document.createElement('a'); link.href = url; link.download = `norms-teleology-study1-${review ? 'review' : 'local'}-${condition}.${format}`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    const demoColumns = ['session_id', 'condition', ...m.demographicFields, 'review_mode', 'valid_participant_data', 'study_version'];
+    const demoRecord = { ...payload, ...demographics };
+    const data = format === 'demographics' ? [demoColumns.join(','), ...(demographicRow ? [demoColumns.map(k => quote(demoRecord[k])).join(',')] : [])].join('\r\n')
+      : format === 'csv' ? [columns.join(','), ...state.records.filter(r => r.trial_role === 'response').map(r => columns.map(k => quote(r[k])).join(','))].join('\r\n') : JSON.stringify(payload, null, 2);
+    const isCsv = format === 'csv' || format === 'demographics';
+    const url = URL.createObjectURL(new Blob([data], { type: isCsv ? 'text/csv;charset=utf-8' : 'application/json' }));
+    const link = document.createElement('a'); link.href = url; link.download = `norms-teleology-study1-${review ? 'review' : 'local'}-${condition}${format === 'demographics' ? '-demographics' : ''}.${isCsv ? 'csv' : 'json'}`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   function bindDownloads() {
     document.getElementById('download-json')?.addEventListener('click', () => download());
     document.getElementById('download-csv')?.addEventListener('click', () => download('csv'));
+    document.getElementById('download-demographics')?.addEventListener('click', () => download('demographics'));
   }
   function updatePanel() {
     if (!review) return;
@@ -120,7 +132,16 @@ const AVAILABLE_CONDITIONS = ['control', 'survival', 'ecology'];
       if (review && prior) { document.querySelector(`input[value="${prior.rating}"]`).checked = true; explanation.value = prior.explanation; document.getElementById('explanation-section').hidden = false; update(); }
       button.onclick = () => { const selected = document.querySelector('input[name="agreement"]:checked'); if (!selected || !explanation.value.trim()) return; button.disabled = true; finish({ rating: Number(selected.value), rating_label: m.scale[Number(selected.value) - 1], explanation: explanation.value.trim(), rating_rt: ratingStarted }); };
     }
-    if (screen.stage === 'feedback') document.getElementById('feedback-form').onsubmit = e => { e.preventDefault(); finish({ feedback: document.getElementById('feedback').value.trim() }); };
+    if (screen.stage === 'demographics') {
+      const form = document.getElementById('demographics-form');
+      form.onsubmit = e => {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+        const values = new FormData(form);
+        const demographics = Object.fromEntries(m.demographicFields.map(name => [name, String(values.get(name) || '').trim() || null]));
+        finish({ screen_id: 'demographics', ...demographics, final_questions_rt_ms: Math.round(performance.now() - screenStarted) });
+      };
+    }
     bindDownloads();
     updatePanel();
     if (screen.stage === 'rating' && current > 3) requestAnimationFrame(() => window.scrollTo(0, lastScroll));
@@ -131,7 +152,7 @@ const AVAILABLE_CONDITIONS = ['control', 'survival', 'ecology'];
     return { type: jsPsychHtmlButtonResponse, choices: [], stimulus: () => html(screen), data: {
       study_version: m.version, session_id: state.session_id, condition, review_mode: review,
       valid_participant_data: collection, collection_mode: collection ? explanationLab.launch.mode : review ? 'review' : 'local_preview',
-      screen_index: index, stage: screen.stage, trial_role: q ? 'response' : 'screen',
+      screen_index: index, stage: screen.stage, trial_role: q ? 'response' : screen.stage === 'demographics' ? 'demographics' : 'screen',
       ...(q ? { question_id: q.id, item_id: q.id, measure: q.id, question_position: screen.question + 1, statement: q.text, probe: m.probe, scale_min: 1, scale_max: 7, scale_labels: m.scale, story_setup: m.setup, story_condition: m.conditions[condition].text, image_spotted: m.images[0].src, image_unspotted: m.images[1].src } : {})
     }, on_start: () => { current = index; }, on_load: () => bind(screen), on_finish: data => {
       delete data.stimulus;
@@ -142,9 +163,9 @@ const AVAILABLE_CONDITIONS = ['control', 'survival', 'ecology'];
   }
   async function completed() {
     if (declined) { root.innerHTML = page('<h1>Thank you</h1><p>You have not consented. No study responses have been submitted. You may close this window.</p>', 'simple-page thank-you'); return; }
-    state.complete = state.consented && core.complete(state.records, m.questions); persist();
+    state.complete = state.consented && core.complete(state.records, m.questions) && state.records.some(r => r.stage === 'demographics'); persist();
     if (collection) {
-      if (!state.complete || !state.records.some(r => r.stage === 'feedback') || !state.records.some(r => r.stage === 'consent' && r.consent === true) || state.records.some(r => r.condition !== condition)) {
+      if (!state.complete || !state.records.some(r => r.stage === 'consent' && r.consent === true) || state.records.some(r => r.condition !== condition)) {
         root.innerHTML = page('<h1>The study is incomplete</h1><p>Please reopen your study link to continue.</p>', 'simple-page'); return;
       }
       if (state.saved && explanationLab.launch.mode === 'sandbox') { root.innerHTML = page('<h1>Sandbox complete</h1><p>Your responses have already been saved to the Explanation Lab.</p>', 'simple-page'); return; }
@@ -153,7 +174,7 @@ const AVAILABLE_CONDITIONS = ['control', 'survival', 'ecology'];
       savePromise = (async () => {
         try {
           await explanationLab.submitAndRedirect(jsPsych.data.get(), { durationMs: performance.now() - studyStarted, showRetryScreen: false,
-            metadata: { experimentVersion: m.version, schemaVersion: '2.0.0', demographicFields: [], expected_rating_count: 4, species: 'virdex', question_order: m.questions.map(q => q.id) } });
+            metadata: { experimentVersion: m.version, schemaVersion: '2.0.0', demographicFields: m.demographicFields, expected_rating_count: 4, species: 'virdex', question_order: m.questions.map(q => q.id) } });
           state.saved = true; persist();
           if (explanationLab.launch.mode === 'sandbox') root.innerHTML = page('<h1>Sandbox complete</h1><p>Your responses have been saved to the Explanation Lab.</p>', 'simple-page');
         } catch (error) {
