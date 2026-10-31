@@ -11,6 +11,8 @@ parser.add_argument('output', type=Path)
 args = parser.parse_args()
 allowed = {
     'index.html', 'explanation-lab-client.js', 'explanation-lab.config.json',
+    'assets/nalk-prominent-hair.png', 'assets/nalk-hairless.png',
+    'assets/marvin-prominent-spikes.png', 'assets/marvin-normal-feet.png',
     'assets/virdex-spotted.png', 'assets/virdex-unspotted.png', 'css/study.css',
     'js/collection.js', 'js/config.js', 'js/core.js', 'js/materials.js', 'js/study.js',
     'vendor/THIRD_PARTY_NOTICES.md', 'vendor/jspsych-7.3.4.css',

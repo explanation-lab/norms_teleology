@@ -2,11 +2,13 @@
 
 ## Study 1
 
-Study 1 implements David's October 31, 2026 approved revision of `Study 1.docx`:
-one fictional species, three between-participant conditions (control, survival
-benefit, ecological benefit), and four agreement ratings with explanations.
-The final screen now uses the usual Purpose Norms demographics (age, gender,
-race and ethnicity), with all items optional, in place of the feedback form.
+Current source and review ZIP are version 2.1.0: Virdexes, Nalks and Marvins,
+three between-participant conditions, and five agreement/explanation pairs per
+animal (15 total). Animal order is randomized, with one condition held across
+all animals. Significance is the added fifth measure. One randomized question order per
+participant is reused for all three animals. Optional Purpose Norms
+demographics remain at the end. Nalk hair and Marvin foot spikes are prominent;
+Marvins have normal small feet and many spikes versus none.
 
 - [Open the reviewer entry](code/experiments/study1/index.html). For a browser
   preview, use the ZIP or local HTML file rather than GitHub's source-code view.
@@ -15,24 +17,26 @@ race and ethnicity), with all items optional, in place of the feedback form.
   All assets and jsPsych are bundled. No server or internet is required.
 - [Console upload ZIP](dist/norms-teleology-study1-upload.zip): the separate
   collection source package.
-- [Frozen Console release](dist/norms-teleology-study1-console-1.1.1.zip): the native
+- [Expanded frozen Console release](dist/norms-teleology-study1-console-2.1.0.zip): the native
   converted package actually deployed on GitHub Pages.
-- [Study Console setup](https://explanation-lab-studies.web.app/?view=projects&project=NORMS-TELEOLOGY-S6P2&study=NORMS-TELEOLOGY-STUDY-1-SYGT&data=sandbox&section=setup):
+- [Study Console setup](https://explanation-lab-studies.web.app/?view=projects&project=NORMS-TELEOLOGY-S6P2&study=NORMS-TELEOLOGY-THREE-ANIMAL-UVMR&data=sandbox&section=setup):
   **25 per condition / 75 total**. All three hosted Sandbox groups passed.
 - [Design and wording](code/experiments/study1/STUDY_DESIGN.md) and
   [image provenance and prompts](code/experiments/study1/assets/IMAGE_PROVENANCE.md).
-- [Console setup status](docs/STUDY1_CONSOLE.md).
+- [Expanded Console setup and verification](docs/STUDY1_EXPANDED_CONSOLE.md).
+- [Original collection record](docs/STUDY1_CONSOLE.md).
 
 Rebuild packages with `python3 tools/package_study.py`. Run checks with
 `node tests/study1.cjs`, `node tests/study1-save.cjs`, and
 `python3 tests/check_packages.py`. For localhost preview, run
 `python3 tools/serve.py --port 8776` and open `http://127.0.0.1:8776/`.
 
-The repository is public with David's explicit approval. Study 1 is hosted and
-registered under Dhruv's existing project. Sandbox data and export checks passed;
-only the actual Prolific completion URL and configuration confirmation remain.
-No recruitment is launched and there are zero production submissions. Review
-data are never submitted. See the setup record before changing the frozen release.
+The repository is public with David's explicit approval. The original hosted
+release remains frozen at 1.1.1; its Console study has 75 real submissions.
+Version 2.1.0 is separately hosted and registered as Norms Teleology — Three
+Animals with 25 per condition / 75 total. All three hosted Sandbox sessions and
+the downloaded-data audit passed; only David's final Prolific setup remains.
+Review data are never submitted. See the expanded Console setup record.
 
 How do beliefs about the purposes of nonhuman animals shape judgments of goodness, value, and importance?
 
@@ -48,7 +52,7 @@ These are directions for developing candidate cases, not finalized experiments o
 
 ## Team and current stage
 
-Dhruv Sahu is the sole project member and Project Lead for now. David Rose and Shaun Nichols provide scientific guidance. Current stage: literature review and study-material development. No backup has been assigned, and no study has been launched in this workspace.
+Dhruv Sahu is the sole project member and Project Lead for now. David Rose and Shaun Nichols provide scientific guidance. Current stage: Study 1 has collected 75 real submissions; the expanded three-animal revision is hosted and Sandbox verified, awaiting Prolific setup. No backup has been assigned.
 
 ## Slides and readings
 

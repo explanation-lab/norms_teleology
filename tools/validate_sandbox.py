@@ -13,10 +13,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument('bundle', type=Path)
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[1]
+# This verifier audits the original hosted tests, not the evolving reviewer.
+with ZipFile(root / 'dist/norms-teleology-study1-console-1.1.1.zip') as release:
+    original_materials = release.read('js/materials.js').decode()
 materials = json.loads(subprocess.check_output([
-    'node', '-e', 'require(process.argv[1]);process.stdout.write(JSON.stringify(globalThis.NormsMaterials));',
-    str(root / 'code/experiments/study1/js/materials.js')
-], text=True))
+    'node', '-e', 'require("node:vm").runInThisContext(require("node:fs").readFileSync(0,"utf8"));process.stdout.write(JSON.stringify(globalThis.NormsMaterials));'
+], input=original_materials, text=True))
 expected_ratings = {'control': [4, 2, 3, 1], 'survival': [7, 6, 5, 1], 'ecology': [6, 5, 7, 2]}
 with ZipFile(args.bundle) as archive:
     raw = json.loads(archive.read('raw-submissions.json'))

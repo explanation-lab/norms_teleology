@@ -42,18 +42,14 @@ def build(kind):
         }
         files['explanation-lab.config.json'] = (json.dumps(config, indent=2) + '\n').encode()
         files['CONSOLE_SETUP.txt'] = (
-            'Console-connected upload package. The official Console converter verified\n'
-            'the initial integration structure, assignment wiring and three conditions\n'
-            'on October 31, 2026. Version 1.1.0 replaces the standalone feedback screen\n'
-            'with optional age, gender, race and ethnicity fields from Purpose Norms.\n'
-            'Final source and collection mappings are covered by runtime tests.\n'
-            'This manifest and fingerprint are reproducibly generated from final source\n'
-            'by tools/package_study.py, rather than reusing the earlier conversion hash.\n'
-            '\nPublish the entire folder. Register its public study URL in project\n'
-            'NORMS-TELEOLOGY-S6P2. Use equal condition targets after choosing total N.\n'
-            'Confirm duration/payment and Prolific completion details. Run all three\n'
-            'Sandbox groups and verify their exports before any recruitment.\n'
-            'No public hosting or live Sandbox submissions were performed in this build.\n'
+            'Three-animal revision, version 2.1.0. This ZIP is converter source.\n'
+            'It has not been natively converted or certified in hosted Sandbox.\n'
+            'Three between-participant conditions; each participant sees all three\n'
+            'animal items in randomized order and answers 15 rating/explanation pairs.\n'
+            'Use a new Console study/release in project NORMS-TELEOLOGY-S6P2.\n'
+            'Do not overwrite the frozen 1.1.1 production study or mix datasets.\n'
+            'Run the official converter, check pilot duration/payment, complete\n'
+            'all three hosted Sandbox groups and verify exports before recruitment.\n'
         ).encode()
     else:
         for name in ('collection.html', 'js/collection.js', 'explanation-lab-client.js'):

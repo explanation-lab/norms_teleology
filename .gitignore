@@ -33,3 +33,9 @@ service-account*.json
 /dist/norms-teleology-study1-review 2/
 
 # These patterns are a convenience, not a privacy audit. Review every commit.
+
+# User-extracted versioned review ZIP folders
+/dist/norms-teleology-study1-review-*/
+
+# Superseded generated image drafts remain local.
+/figures/stimulus-drafts/

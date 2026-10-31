@@ -1,5 +1,12 @@
 # Study 1 Console setup
 
+**Current status:** The original 1.1.1 study has 75 real submissions, verified in
+Console. The historical prelaunch record below documents its original setup.
+Current source/reviewer version 2.0.0 adds three animal items and five measures
+per animal; it is not deployed. Use a new Console study/release and run new
+hosted Sandbox tests before recruiting for the expanded study.
+
+
 Study 1 is published and registered under Dhruv Sahu's Norms Teleology project.
 All three real hosted Sandbox sessions passed on October 31, 2026. The data
 format is confirmed. Final preflight reports only the two Prolific actions below.
