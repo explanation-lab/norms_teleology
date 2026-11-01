@@ -2,10 +2,10 @@
   "format": "explanation-lab-study-config",
   "manifestVersion": "1.2.0",
   "schemaVersion": "2.0.0",
-  "convertedAt": "2026-11-01T13:28:15.050Z",
-  "sourceZip": "norms-teleology-mixed-pilot-upload-1.1.3.zip",
+  "convertedAt": "2026-11-01T13:32:41.963Z",
+  "sourceZip": "norms-teleology-mixed-pilot-upload-1.1.4.zip",
   "jsPsychVersion": "7.3.4",
-  "experimentVersion": "norms-teleology-mixed-pilot-1.1.3",
+  "experimentVersion": "norms-teleology-mixed-pilot-1.1.4",
   "clientVersion": "1.5.1",
   "assignmentType": "counterbalanced_within_participant",
   "launchAssignmentParameter": "order",
@@ -48,6 +48,6 @@
     "ethnicity"
   ],
   "conversionOutcome": "ready",
-  "packageFingerprint": "2b9347cd92f4a0292ad96020bb5e7c649ace5e02449704b28b02c2b4102d6468",
+  "packageFingerprint": "dd469a474218d5656d4f40b71531551d0d2ca6b941e645d56c5e2e9519d8f5e0",
   "originalBackupPaths": []
 }

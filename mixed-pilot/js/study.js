@@ -74,7 +74,7 @@ const AVAILABLE_CONDITIONS = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
     const demographicRow = state.records.find(r => r.stage === 'demographics');
     const demographics = demographicRow ? Object.fromEntries(m.demographicFields.map(field => [field, demographicRow[field] ?? null])) : null;
     const payload = { study_version: m.version, project_id: config.projectId, session_id: state.session_id, assignment_type: 'counterbalanced_within_participant', pairing_id: pairing.id, condition_map: conditionMap, item_order: state.item_order, question_order: state.question_order, review_mode: review, valid_participant_data: false, collection_mode: review ? 'review' : 'local_preview', consented: state.consented, complete: state.complete, scale_labels: m.scale, demographics, trials: state.records };
-    const columns = ['session_id','pairing_id','condition','item_id','item_position','measure','question_id','question_position','statement','rating','rating_label','rating_rt','rt','review_mode','valid_participant_data','study_version'];
+    const columns = ['session_id','pairing_id','condition','benefit_condition','item_id','item_position','measure','question_id','question_position','statement','rating','rating_label','rating_rt','rt','review_mode','valid_participant_data','study_version'];
     const quote = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
     const demoColumns = ['session_id', 'pairing_id', ...m.demographicFields, 'review_mode', 'valid_participant_data', 'study_version'];
     const demoRecord = { ...payload, ...demographics };
@@ -172,7 +172,7 @@ const AVAILABLE_CONDITIONS = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'];
     const item = m.items.find(item => item.id === screen.item);
     const q = screen.stage === 'rating' ? item.questions[screen.question] : null;
     return { type: jsPsychHtmlButtonResponse, choices: [], stimulus: () => html(screen), data: {
-      study_version: m.version, session_id: state.session_id, assignment_type: 'counterbalanced_within_participant', pairing_id: pairing.id, condition_map: conditionMap, launch_condition: pairing.id, condition: item ? conditionMap[item.id] : null, review_mode: review,
+      study_version: m.version, session_id: state.session_id, assignment_type: 'counterbalanced_within_participant', pairing_id: pairing.id, condition_map: conditionMap, launch_condition: pairing.id, condition: item ? conditionMap[item.id] : null, benefit_condition: item ? conditionMap[item.id] : null, review_mode: review,
       valid_participant_data: collection, collection_mode: collection ? explanationLab.launch.mode : review ? 'review' : 'local_preview',
       item_order: state.item_order, question_order: state.question_order, ...(item ? { species: item.id, item_id: item.id, item_position: screen.itemPosition + 1, story_setup: item.setup, story_condition: item.conditions[conditionMap[item.id]].text } : {}),
       screen_index: index, stage: screen.stage, trial_role: q ? 'response' : screen.stage === 'demographics' ? 'demographic' : 'screen',

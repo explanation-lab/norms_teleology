@@ -1,6 +1,6 @@
 /* Mixed-condition pilot, revised by David Rose's approved instructions, 2026-11-01. */
 globalThis.NormsMaterials = Object.freeze({
-  version: 'norms-teleology-mixed-pilot-1.1.3',
+  version: 'norms-teleology-mixed-pilot-1.1.4',
   demographicFields: ["age", "gender", "other_gender", "race", "other_race", "ethnicity"],
   demographics: {
     age: { min: 18, max: 100 },
