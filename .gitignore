@@ -39,3 +39,6 @@ service-account*.json
 
 # Superseded generated image drafts remain local.
 /figures/stimulus-drafts/
+
+# User-extracted mixed-pilot reviewer folders
+/dist/norms-teleology-mixed-pilot-review-*/

@@ -1,11 +1,23 @@
 # Project status
 
 - Last updated: October 31, 2026.
-- Current stage: Original Study 1 has 75 real submissions; expanded version 2.1.0 hosted and Sandbox verified, awaiting David's Prolific setup.
+- Current stage: Mixed-condition pilot registered for 50 participants, all six Sandbox pairings verified; awaiting David's Prolific setup.
+- Previous stage: Original Study 1 has 75 real submissions; expanded version 2.1.0 hosted and Sandbox verified, awaiting David's Prolific setup.
 - Project Lead and sole project member: Dhruv Sahu (ds2534@cornell.edu; GitHub ds2534).
 - Project Backup: none assigned; sole-member project for now.
 - Scientific guidance: David Rose and Shaun Nichols.
 - Active experiment: expanded Study 1, Virdexes, Nalks and Marvins in control, survival-benefit, and ecological-benefit conditions.
+
+## Active mixed-condition pilot
+
+Version 1.1.4 is hosted and registered as NORMS-TELEOLOGY-MIXED-CONDIT-A5QM.
+Each participant sees every animal and every benefit condition once. Targets
+across six pairings are 9,8,8,9,8,8 (50 total). Animal order and one shared
+question order are randomized. There are 15 ratings and no explanations. The
+updated value wording and single ground-contact hoof spikes are implemented.
+All six actual hosted Sandbox sessions passed; 90 ratings and 126 raw trials
+were audited. Only the actual Prolific completion URL and settings confirmation
+remain. [Setup record](docs/MIXED_PILOT_CONSOLE.md).
 
 ## Current revision
 

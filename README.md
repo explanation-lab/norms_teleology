@@ -1,5 +1,23 @@
 # norms_teleology
 
+## New mixed-condition pilot
+
+[Offline reviewer ZIP](dist/norms-teleology-mixed-pilot-review-1.1.4.zip), version
+`norms-teleology-mixed-pilot-1.1.4`. Extract and double-click `index.html`.
+Each participant receives all three animals once and all three conditions once;
+the six pairings, animal order and one shared question order are randomized.
+Value wording is revised to “valuable in a way that would be lost”. Responses
+are ratings only, without explanations. Marvins have one ground-contact spike
+per hoof. The reviewer
+panel selects pairings, animals and screens and shuffles preview orders.
+[Design](code/experiments/mixed-pilot/STUDY_DESIGN.md). Checks:
+`node tests/mixed-pilot.cjs`; package: `python3 tools/package_mixed_pilot.py`.
+The separate hosted pilot targets **50 participants total**, balanced across six
+pairings. All six Sandbox sessions and the 90-rating export audit passed.
+[Console setup and final Prolific actions](docs/MIXED_PILOT_CONSOLE.md).
+Use benefit_condition for control/survival/ecology in readable CSVs. Previous
+hosted collections are unchanged.
+
 ## Study 1
 
 Current source and review ZIP are version 2.1.0: Virdexes, Nalks and Marvins,
