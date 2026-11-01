@@ -1,0 +1,38 @@
+{
+  "format": "explanation-lab-study-config",
+  "manifestVersion": "1.2.0",
+  "schemaVersion": "2.0.0",
+  "convertedAt": "2026-11-01T16:02:20.132Z",
+  "sourceZip": "norms-teleology-single-animal-pilot-upload-1.0.0.zip",
+  "jsPsychVersion": "7.3.4",
+  "experimentVersion": "norms-teleology-single-animal-pilot-1.0.0",
+  "clientVersion": "1.5.1",
+  "assignmentType": "between_participant",
+  "launchAssignmentParameter": "condition",
+  "launchConditions": [
+    "control",
+    "survival",
+    "ecology"
+  ],
+  "conditions": [
+    "control",
+    "survival",
+    "ecology"
+  ],
+  "internalFactors": [],
+  "internalConditionCells": [],
+  "demographicsConfirmed": true,
+  "demographicFields": [
+    "age",
+    "gender",
+    "other_gender",
+    "race",
+    "other_race",
+    "ethnicity"
+  ],
+  "conversionOutcome": "ready",
+  "packageFingerprint": "3e7746bca36fae2fa24ba914328a015c98b7b445262d0eb7ddd1d5f80a0b9dc7",
+  "originalBackupPaths": [
+    "explanation-lab-original/js/study.js"
+  ]
+}
