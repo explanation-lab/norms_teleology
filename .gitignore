@@ -42,3 +42,6 @@ service-account*.json
 
 # User-extracted mixed-pilot reviewer folders
 /dist/norms-teleology-mixed-pilot-review-*/
+
+# User-extracted single-animal reviewer folders
+/dist/norms-teleology-single-animal-pilot-review-*/
