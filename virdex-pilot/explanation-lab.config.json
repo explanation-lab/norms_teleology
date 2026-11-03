@@ -1,0 +1,38 @@
+{
+  "format": "explanation-lab-study-config",
+  "manifestVersion": "1.2.0",
+  "schemaVersion": "2.0.0",
+  "convertedAt": "2026-11-03T14:32:18.835Z",
+  "sourceZip": "norms-teleology-virdex-pilot-upload-1.0.0.zip",
+  "jsPsychVersion": "7.3.4",
+  "experimentVersion": "norms-teleology-virdex-pilot-1.0.0",
+  "clientVersion": "1.5.1",
+  "assignmentType": "between_participant",
+  "launchAssignmentParameter": "condition",
+  "launchConditions": [
+    "control",
+    "survival",
+    "ecology"
+  ],
+  "conditions": [
+    "control",
+    "survival",
+    "ecology"
+  ],
+  "internalFactors": [],
+  "internalConditionCells": [],
+  "demographicsConfirmed": true,
+  "demographicFields": [
+    "age",
+    "gender",
+    "other_gender",
+    "race",
+    "other_race",
+    "ethnicity"
+  ],
+  "conversionOutcome": "ready",
+  "packageFingerprint": "e3578ab84c4b4cb8ff9f3c5b1b203da653c4e2fad84b6b35efa2ee893b515337",
+  "originalBackupPaths": [
+    "explanation-lab-original/js/study.js"
+  ]
+}
