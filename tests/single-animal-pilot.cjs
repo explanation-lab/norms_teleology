@@ -64,7 +64,7 @@ function launch({condition,animal,seed,collection=false,fail=false,randomValues}
   const retry=launch({condition,seed:full,collection:true,fail:true});await new Promise(r=>setImmediate(r));assert(retry.elements.get('jspsych-target').innerHTML.includes('not been saved yet'));retry.client.submitAndRedirect=async()=>{};await retry.elements.get('retry-save').onclick();assert(retry.context.normsStudy.state.saved);
  }
  assert.throws(()=>launch({condition:'p1',collection:true}),/Invalid Console condition/);
- for(const file of (process.env.NORMS_STUDY_SOURCE ? ['review.html','participant.html'] : ['index.html','participant.html'])){
+ for(const file of (fs.existsSync(path.join(base,'review.html')) ? ['review.html','participant.html'] : ['index.html','participant.html'])){
   const html=fs.readFileSync(path.join(base,file),'utf8');assert(!html.includes('type="module"'));assert(!html.includes('review-pairing'));
   for(const[,ref]of html.matchAll(/(?:src|href)="([^"]+)"/g)){assert(!/^https?:/.test(ref));assert(fs.existsSync(path.join(base,ref)));}
  }

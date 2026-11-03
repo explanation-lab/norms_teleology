@@ -45,3 +45,6 @@ service-account*.json
 
 # User-extracted single-animal reviewer folders
 /dist/norms-teleology-single-animal-pilot-review-*/
+
+# User-extracted Virdex reviewer folders
+/dist/norms-teleology-virdex-pilot-review-*/

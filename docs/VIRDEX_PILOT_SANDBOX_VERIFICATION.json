@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "study_id": "NORMS-TELEOLOGY-VIRDEX-NORMS-N58B",
+  "experiment_version": "norms-teleology-virdex-pilot-1.0.0",
+  "package_fingerprint": "e3578ab84c4b4cb8ff9f3c5b1b203da653c4e2fad84b6b35efa2ee893b515337",
+  "bundle_sha256": "3cf2cd8088ee0b8bd891b49c46e303ec35e13989cb62e5dea3a3581206f8c945",
+  "submissions": 3,
+  "raw_trials": 24,
+  "ratings_with_explanations": 12,
+  "response_csv_rows": 21,
+  "demographic_csv_rows": 3,
+  "condition_counts": {
+    "ecology": 1,
+    "survival": 1,
+    "control": 1
+  },
+  "animal_counts": {
+    "virdex": 3
+  },
+  "condition_animal_counts": {
+    "control/virdex": 1,
+    "ecology/virdex": 1,
+    "survival/virdex": 1
+  },
+  "distinct_question_orders": 3,
+  "targets": {
+    "control": 25,
+    "survival": 25,
+    "ecology": 25
+  },
+  "data_recipe_confirmed": true,
+  "checks": [
+    "One condition and one animal per participant",
+    "All four distinct questions, valid ratings and exact explanations",
+    "Exact frozen stories, statements, images and scale labels",
+    "Only Virdexes presented in all three conditions",
+    "Randomized question orders preserved in saved records",
+    "Consent and eight unique screens including reload recovery",
+    "Ordinary, Other-text and blank demographics match raw and CSV",
+    "Readable rating CSV matches raw records",
+    "Zero duplicate Sandbox submissions after completed reload"
+  ]
+}
