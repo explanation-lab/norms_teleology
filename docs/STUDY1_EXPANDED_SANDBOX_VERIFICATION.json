@@ -1,0 +1,64 @@
+{
+  "result": "passed",
+  "study_id": "NORMS-TELEOLOGY-THREE-ANIMAL-UVMR",
+  "experiment_version": "norms-teleology-study1-2.1.0",
+  "package_fingerprint": "087aa82136076409431a93f1f42b3731f545f5ef61f962221ebbcebdbe6542ca",
+  "targets": {
+    "control": 25,
+    "survival": 25,
+    "ecology": 25
+  },
+  "submissions": 3,
+  "raw_trials": 63,
+  "rating_explanation_rows": 45,
+  "response_csv_rows": 60,
+  "demographic_rows": 3,
+  "orders": {
+    "ecology": {
+      "animals": [
+        "marvin",
+        "nalk",
+        "virdex"
+      ],
+      "questions": [
+        "significance",
+        "value",
+        "survival_importance",
+        "wrongness",
+        "comparative_importance"
+      ]
+    },
+    "survival": {
+      "animals": [
+        "virdex",
+        "marvin",
+        "nalk"
+      ],
+      "questions": [
+        "wrongness",
+        "comparative_importance",
+        "significance",
+        "survival_importance",
+        "value"
+      ]
+    },
+    "control": {
+      "animals": [
+        "virdex",
+        "marvin",
+        "nalk"
+      ],
+      "questions": [
+        "wrongness",
+        "significance",
+        "value",
+        "survival_importance",
+        "comparative_importance"
+      ]
+    }
+  },
+  "question_order": "same across all animals within participant; different across test participants",
+  "control_reload": "all 21 unique screens preserved; completed reload did not resubmit",
+  "demographics": "ordinary, both Other fields, and all-blank forms verified",
+  "bundle_sha256": "ac7a882a26b64a371be6ab7a08f8a4313c4b6acc85848616442ac7d04a4f2277"
+}

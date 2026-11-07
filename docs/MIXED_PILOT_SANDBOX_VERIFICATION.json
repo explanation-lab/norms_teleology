@@ -1,0 +1,129 @@
+{
+  "result": "passed",
+  "study_id": "NORMS-TELEOLOGY-MIXED-CONDIT-A5QM",
+  "version": "norms-teleology-mixed-pilot-1.1.4",
+  "package_fingerprint": "dd469a474218d5656d4f40b71531551d0d2ca6b941e645d56c5e2e9519d8f5e0",
+  "planned_participants": 50,
+  "pairing_targets": {
+    "p1": 9,
+    "p2": 8,
+    "p3": 8,
+    "p4": 9,
+    "p5": 8,
+    "p6": 8
+  },
+  "planned_animal_condition_counts": {
+    "virdex": {
+      "control": 17,
+      "survival": 17,
+      "ecology": 16
+    },
+    "nalk": {
+      "control": 16,
+      "survival": 17,
+      "ecology": 17
+    },
+    "marvin": {
+      "control": 17,
+      "survival": 16,
+      "ecology": 17
+    }
+  },
+  "sandbox_submissions": 6,
+  "raw_trials": 126,
+  "ratings": 90,
+  "response_csv_rows": 120,
+  "demographic_csv_rows": 6,
+  "all_pairings": "matched",
+  "benefit_condition": "verified in raw and readable CSV",
+  "explanations": "absent",
+  "orders": {
+    "p6": {
+      "animals": [
+        "virdex",
+        "marvin",
+        "nalk"
+      ],
+      "questions": [
+        "comparative_importance",
+        "significance",
+        "wrongness",
+        "survival_importance",
+        "value"
+      ]
+    },
+    "p5": {
+      "animals": [
+        "marvin",
+        "virdex",
+        "nalk"
+      ],
+      "questions": [
+        "significance",
+        "survival_importance",
+        "value",
+        "wrongness",
+        "comparative_importance"
+      ]
+    },
+    "p4": {
+      "animals": [
+        "virdex",
+        "nalk",
+        "marvin"
+      ],
+      "questions": [
+        "survival_importance",
+        "significance",
+        "wrongness",
+        "comparative_importance",
+        "value"
+      ]
+    },
+    "p3": {
+      "animals": [
+        "nalk",
+        "marvin",
+        "virdex"
+      ],
+      "questions": [
+        "survival_importance",
+        "value",
+        "wrongness",
+        "comparative_importance",
+        "significance"
+      ]
+    },
+    "p2": {
+      "animals": [
+        "marvin",
+        "nalk",
+        "virdex"
+      ],
+      "questions": [
+        "significance",
+        "value",
+        "wrongness",
+        "survival_importance",
+        "comparative_importance"
+      ]
+    },
+    "p1": {
+      "animals": [
+        "marvin",
+        "virdex",
+        "nalk"
+      ],
+      "questions": [
+        "comparative_importance",
+        "value",
+        "survival_importance",
+        "wrongness",
+        "significance"
+      ]
+    }
+  },
+  "reload": "mid-session and completed-session reload verified for p1; no duplicate save",
+  "demographics": "ordinary values, both Other entries and all-blank forms passed",
+  "bundle_sha256": "518a4459058e34cbb216b66ea806e38eabfc2b40f30f3330f715c718475809f4"
+}

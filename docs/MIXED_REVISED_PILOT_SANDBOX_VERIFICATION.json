@@ -1,0 +1,129 @@
+{
+  "result": "passed",
+  "study_id": "NORMS-TELEOLOGY-REVISED-MIXE-8ES4",
+  "version": "norms-teleology-mixed-revised-pilot-1.0.3",
+  "package_fingerprint": "82d9b514c0727667da5b60aa4110197eeecc48b77485bfa9d6c8614677f577c5",
+  "planned_participants": 50,
+  "pairing_targets": {
+    "p1": 9,
+    "p2": 8,
+    "p3": 8,
+    "p4": 9,
+    "p5": 8,
+    "p6": 8
+  },
+  "planned_animal_condition_counts": {
+    "virdex": {
+      "control": 17,
+      "survival": 17,
+      "ecology": 16
+    },
+    "nalk": {
+      "control": 16,
+      "survival": 17,
+      "ecology": 17
+    },
+    "marvin": {
+      "control": 17,
+      "survival": 16,
+      "ecology": 17
+    }
+  },
+  "sandbox_submissions": 6,
+  "raw_trials": 126,
+  "ratings": 90,
+  "response_csv_rows": 120,
+  "demographic_csv_rows": 6,
+  "all_pairings": "matched",
+  "benefit_condition": "verified in raw and readable CSV",
+  "explanations": "absent",
+  "orders": {
+    "p6": {
+      "animals": [
+        "virdex",
+        "nalk",
+        "marvin"
+      ],
+      "questions": [
+        "special_importance",
+        "value",
+        "wrongness",
+        "meant_to_do",
+        "ought_to_have"
+      ]
+    },
+    "p5": {
+      "animals": [
+        "marvin",
+        "virdex",
+        "nalk"
+      ],
+      "questions": [
+        "wrongness",
+        "ought_to_have",
+        "value",
+        "meant_to_do",
+        "special_importance"
+      ]
+    },
+    "p4": {
+      "animals": [
+        "marvin",
+        "virdex",
+        "nalk"
+      ],
+      "questions": [
+        "special_importance",
+        "meant_to_do",
+        "wrongness",
+        "ought_to_have",
+        "value"
+      ]
+    },
+    "p3": {
+      "animals": [
+        "nalk",
+        "marvin",
+        "virdex"
+      ],
+      "questions": [
+        "meant_to_do",
+        "wrongness",
+        "value",
+        "ought_to_have",
+        "special_importance"
+      ]
+    },
+    "p2": {
+      "animals": [
+        "virdex",
+        "marvin",
+        "nalk"
+      ],
+      "questions": [
+        "wrongness",
+        "special_importance",
+        "meant_to_do",
+        "ought_to_have",
+        "value"
+      ]
+    },
+    "p1": {
+      "animals": [
+        "virdex",
+        "marvin",
+        "nalk"
+      ],
+      "questions": [
+        "meant_to_do",
+        "ought_to_have",
+        "value",
+        "special_importance",
+        "wrongness"
+      ]
+    }
+  },
+  "reload": "mid-session and completed-session reload verified for p1; no duplicate save",
+  "demographics": "ordinary values, both Other entries and all-blank forms passed",
+  "bundle_sha256": "d89abf51bb442122a3c983466f876accd96dfb1aecac9d778c52df44a4443dbe"
+}

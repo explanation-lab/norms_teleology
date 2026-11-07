@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "study_id": "NORMS-TELEOLOGY-SINGLE-ANIMA-VSL7",
+  "experiment_version": "norms-teleology-single-animal-pilot-1.0.0",
+  "package_fingerprint": "3e7746bca36fae2fa24ba914328a015c98b7b445262d0eb7ddd1d5f80a0b9dc7",
+  "bundle_sha256": "0ed3285cf68bfd0d6d887e0b232ad110f8363cb31b255b79ae4f6a3b10e9be97",
+  "submissions": 6,
+  "raw_trials": 54,
+  "ratings_with_explanations": 30,
+  "response_csv_rows": 48,
+  "demographic_csv_rows": 6,
+  "condition_counts": {
+    "survival": 2,
+    "ecology": 2,
+    "control": 2
+  },
+  "animal_counts": {
+    "virdex": 1,
+    "nalk": 3,
+    "marvin": 2
+  },
+  "condition_animal_counts": {
+    "control/marvin": 1,
+    "control/nalk": 1,
+    "ecology/marvin": 1,
+    "ecology/nalk": 1,
+    "survival/nalk": 1,
+    "survival/virdex": 1
+  },
+  "distinct_question_orders": 6,
+  "targets": {
+    "control": 25,
+    "survival": 25,
+    "ecology": 25
+  },
+  "data_recipe_confirmed": true,
+  "checks": [
+    "One condition and one animal per participant",
+    "All five distinct questions, valid ratings and exact explanations",
+    "Exact frozen stories, statements, images and scale labels",
+    "Animal assignment varies within every condition",
+    "All three species observed",
+    "Randomized question orders preserved in saved records",
+    "Consent and nine unique screens including reload recovery",
+    "Ordinary, Other-text and blank demographics match raw and CSV",
+    "Readable rating CSV matches raw records",
+    "Zero duplicate Sandbox submissions after completed reload"
+  ]
+}
