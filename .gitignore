@@ -48,3 +48,6 @@ service-account*.json
 
 # User-extracted Virdex reviewer folders
 /dist/norms-teleology-virdex-pilot-review-*/
+
+# Extracted revised mixed reviewer copies
+/dist/norms-teleology-mixed-revised-pilot-review-*/

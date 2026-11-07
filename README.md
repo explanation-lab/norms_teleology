@@ -1,5 +1,16 @@
 # norms_teleology
 
+## Revised mixed pilot — current
+
+[Offline reviewer ZIP](dist/norms-teleology-mixed-revised-pilot-review-1.0.3.zip):
+three revised animals, each paired with a different benefit condition, five new
+rating-only questions per animal, shared randomized question order, and darker
+Marvin hoof spikes. [Console setup and final Prolific steps](docs/MIXED_REVISED_PILOT_CONSOLE.md).
+Target: **50 participants total**, balanced across six pairings. Six actual hosted
+Sandbox sessions and the independent 90-rating export audit passed November 7,
+2026. Only the actual Prolific completion URL and recruitment confirmation remain.
+Source: `code/experiments/mixed-revised-pilot/`. Native release: version 1.0.3.
+
 ## New mixed-condition pilot
 
 [Offline reviewer ZIP](dist/norms-teleology-mixed-pilot-review-1.1.4.zip), version

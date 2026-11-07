@@ -3,16 +3,16 @@ from collections import Counter
 from pathlib import Path
 from zipfile import ZipFile
 import argparse,csv,hashlib,io,json,subprocess
-p=argparse.ArgumentParser();p.add_argument('bundle',type=Path);p.add_argument('--summary',type=Path);a=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('bundle',type=Path);p.add_argument('--summary',type=Path);p.add_argument('--package',type=Path,default=Path(__file__).resolve().parents[1]/'dist/norms-teleology-mixed-pilot-console-1.1.4.zip');p.add_argument('--study-id',default='NORMS-TELEOLOGY-MIXED-CONDIT-A5QM');a=p.parse_args()
 root=Path(__file__).resolve().parents[1]
-with ZipFile(root/'dist/norms-teleology-mixed-pilot-console-1.1.4.zip') as z:
+with ZipFile(a.package) as z:
  material=z.read('js/materials.js').decode();package=json.loads(z.read('explanation-lab.config.json'))
 m=json.loads(subprocess.check_output(['node','-e','require("node:vm").runInThisContext(require("node:fs").readFileSync(0,"utf8"));process.stdout.write(JSON.stringify(globalThis.NormsMaterials));'],input=material,text=True))
 with ZipFile(a.bundle) as z:
  raw=json.loads(z.read('raw-submissions.json'));manifest=json.loads(z.read('manifest.json'))
  response=list(csv.DictReader(io.StringIO(z.read('responses.csv').decode('utf-8-sig'))))
  demos=list(csv.DictReader(io.StringIO(z.read('demographics.csv').decode('utf-8-sig'))))
-assert manifest['study']['id']=='NORMS-TELEOLOGY-MIXED-CONDIT-A5QM'
+assert manifest['study']['id']==a.study_id
 targets=dict(zip(['p1','p2','p3','p4','p5','p6'],[9,8,8,9,8,8]))
 assert {c['code']:c['target'] for c in manifest['study']['conditions']}==targets and sum(targets.values())==50
 assert len(raw)==6 and {s['condition'] for s in raw}==set(targets)
