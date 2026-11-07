@@ -7,4 +7,3 @@ Saved image: /Users/davidrose/Documents/ChatGPT/norms_teleology/code/experiments
 
 Final image-edit prompt:
 Use case: precise-object-edit. Edit target: the provided scientific illustration of a Marvin. Change ONLY the four pale ivory spikes at the ground-contact front edges of the four hooves: recolor these same spikes to a much darker charcoal brown, with subtle natural horn texture and highlights, so they are conspicuous against the white background even in a small study image. Keep every spike's exact existing outline, length, thickness, orientation, attachment and position. Preserve the same animal, same pose, anatomy, expression, fur colors, hooves, framing, size, white background and illustration style. Do not add spikes or change the body. No text or labels.
-
