@@ -1,5 +1,15 @@
 # norms_teleology
 
+## Vassel mixed pilot — current
+
+[Reviewer ZIP](dist/norms-teleology-mixed-vassel-pilot-review-1.0.1.zip) with Virdexes,
+Nalks and Vassels, six rating-only questions per animal, standardized survival and
+ecology endings, and one shared randomized question order. Each participant sees
+all three animals and benefit conditions exactly once. **50 participants total**.
+All six hosted Sandbox pairings and the 108-rating export audit passed November
+10, 2026. [Console setup and final Prolific steps](docs/VASSEL_PILOT_CONSOLE.md).
+Source: `code/experiments/mixed-vassel-pilot/`; frozen native version 1.0.1.
+
 ## Revised mixed pilot — current
 
 [Offline reviewer ZIP](dist/norms-teleology-mixed-revised-pilot-review-1.0.3.zip):

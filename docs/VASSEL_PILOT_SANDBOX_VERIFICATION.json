@@ -1,0 +1,135 @@
+{
+  "result": "passed",
+  "study_id": "NORMS-TELEOLOGY-VASSEL-MIXED-JDTA",
+  "version": "norms-teleology-mixed-vassel-pilot-1.0.1",
+  "package_fingerprint": "2ef6bbf8c1874ecdf56b028f39d545252b690fcf530d6600a7ccaca0f7382a35",
+  "planned_participants": 50,
+  "pairing_targets": {
+    "p1": 9,
+    "p2": 8,
+    "p3": 8,
+    "p4": 9,
+    "p5": 8,
+    "p6": 8
+  },
+  "planned_animal_condition_counts": {
+    "virdex": {
+      "control": 17,
+      "survival": 17,
+      "ecology": 16
+    },
+    "nalk": {
+      "control": 16,
+      "survival": 17,
+      "ecology": 17
+    },
+    "vassel": {
+      "control": 17,
+      "survival": 16,
+      "ecology": 17
+    }
+  },
+  "sandbox_submissions": 6,
+  "raw_trials": 144,
+  "ratings": 108,
+  "response_csv_rows": 138,
+  "demographic_csv_rows": 6,
+  "all_pairings": "matched",
+  "benefit_condition": "verified in raw and readable CSV",
+  "explanations": "absent",
+  "orders": {
+    "p6": {
+      "animals": [
+        "nalk",
+        "vassel",
+        "virdex"
+      ],
+      "questions": [
+        "special_importance",
+        "meant_to_do",
+        "reason_to_exist",
+        "value",
+        "ought_to_have",
+        "wrongness"
+      ]
+    },
+    "p5": {
+      "animals": [
+        "vassel",
+        "nalk",
+        "virdex"
+      ],
+      "questions": [
+        "ought_to_have",
+        "wrongness",
+        "reason_to_exist",
+        "meant_to_do",
+        "value",
+        "special_importance"
+      ]
+    },
+    "p4": {
+      "animals": [
+        "nalk",
+        "vassel",
+        "virdex"
+      ],
+      "questions": [
+        "meant_to_do",
+        "ought_to_have",
+        "wrongness",
+        "value",
+        "reason_to_exist",
+        "special_importance"
+      ]
+    },
+    "p3": {
+      "animals": [
+        "nalk",
+        "virdex",
+        "vassel"
+      ],
+      "questions": [
+        "reason_to_exist",
+        "meant_to_do",
+        "value",
+        "ought_to_have",
+        "special_importance",
+        "wrongness"
+      ]
+    },
+    "p2": {
+      "animals": [
+        "virdex",
+        "nalk",
+        "vassel"
+      ],
+      "questions": [
+        "wrongness",
+        "value",
+        "meant_to_do",
+        "special_importance",
+        "reason_to_exist",
+        "ought_to_have"
+      ]
+    },
+    "p1": {
+      "animals": [
+        "vassel",
+        "nalk",
+        "virdex"
+      ],
+      "questions": [
+        "special_importance",
+        "value",
+        "reason_to_exist",
+        "ought_to_have",
+        "wrongness",
+        "meant_to_do"
+      ]
+    }
+  },
+  "reload": "mid-session and completed-session reload verified for p1; no duplicate save",
+  "demographics": "ordinary values, both Other entries and all-blank forms passed",
+  "bundle_sha256": "455694ef79608cf59b01348b7941143638ad15b5cd934313ae92ac4b0ece589c"
+}

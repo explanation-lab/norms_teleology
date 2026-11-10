@@ -51,3 +51,6 @@ service-account*.json
 
 # Extracted revised mixed reviewer copies
 /dist/norms-teleology-mixed-revised-pilot-review-*/
+
+# Extracted Vassel mixed reviewer copies
+/dist/norms-teleology-mixed-vassel-pilot-review-*/
