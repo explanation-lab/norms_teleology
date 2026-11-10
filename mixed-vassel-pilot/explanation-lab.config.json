@@ -1,0 +1,53 @@
+{
+  "format": "explanation-lab-study-config",
+  "manifestVersion": "1.2.0",
+  "schemaVersion": "2.0.0",
+  "convertedAt": "2026-11-10T12:15:10.367Z",
+  "sourceZip": "norms-teleology-mixed-vassel-pilot-upload-1.0.1.zip",
+  "jsPsychVersion": "7.3.4",
+  "experimentVersion": "norms-teleology-mixed-vassel-pilot-1.0.1",
+  "clientVersion": "1.5.1",
+  "assignmentType": "counterbalanced_within_participant",
+  "launchAssignmentParameter": "order",
+  "launchConditions": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6"
+  ],
+  "conditions": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6"
+  ],
+  "internalFactors": [],
+  "internalConditionCells": [
+    "control",
+    "ecology",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "string",
+    "survival"
+  ],
+  "demographicsConfirmed": true,
+  "demographicFields": [
+    "age",
+    "gender",
+    "other_gender",
+    "race",
+    "other_race",
+    "ethnicity"
+  ],
+  "conversionOutcome": "ready",
+  "packageFingerprint": "2ef6bbf8c1874ecdf56b028f39d545252b690fcf530d6600a7ccaca0f7382a35",
+  "originalBackupPaths": []
+}
